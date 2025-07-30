@@ -120,3 +120,958 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom font styles for brand name using Circular Std with subtle letter-spacing */
+.font-brand-name {
+  font-family: var(--font-circular-std), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  /* Subtle letter-spacing for visual distinction */
+  letter-spacing: 0.025em;
+  /* Base letter-spacing for mobile */
+  font-size: 2.25rem;
+  /* text-4xl equivalent */
+  line-height: 1.1;
+}
+
+/* Responsive font sizing and letter-spacing for brand name */
+@media (min-width: 640px) {
+  .font-brand-name {
+    font-size: 3rem;
+    /* sm:text-5xl equivalent */
+    letter-spacing: 0.03em;
+    /* Moderate spacing for tablet and up */
+  }
+}
+
+@media (min-width: 1025px) {
+  .font-brand-name {
+    letter-spacing: 0.035em;
+    /* Slightly more spacing for desktop */
+  }
+}
+
+@media (min-width: 1440px) {
+  .font-brand-name {
+    letter-spacing: 0.04em;
+    /* Maximum spacing for very large screens */
+  }
+}
+
+/* Enhanced letter-spacing for larger screens */
+@media (min-width: 1920px) {
+  .font-brand-name {
+    letter-spacing: 0.045em;
+  }
+}
+
+/* Ensure proper spacing in high-DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .font-brand-name {
+    letter-spacing: calc(var(--base-letter-spacing, 0.025em) + 0.005em);
+  }
+}
+
+/* Letter-spacing animation for smooth transitions */
+.font-brand-name {
+  transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect with subtle letter-spacing increase */
+.group:hover .font-brand-name,
+.font-brand-name:hover {
+  letter-spacing: calc(var(--current-letter-spacing, 0.025em) + 0.01em);
+}
+
+/* CSS custom properties for dynamic letter-spacing */
+:root {
+  --brand-name-letter-spacing-mobile: 0.02em;
+  --brand-name-letter-spacing-tablet: 0.03em;
+  --brand-name-letter-spacing-desktop: 0.035em;
+  --brand-name-letter-spacing-xl: 0.04em;
+}
+
+/* Alternative approach using CSS custom properties */
+.font-brand-name-dynamic {
+  letter-spacing: var(--brand-name-letter-spacing-mobile);
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .font-brand-name-dynamic {
+    letter-spacing: var(--brand-name-letter-spacing-tablet);
+  }
+}
+
+@media (min-width: 1025px) {
+  .font-brand-name-dynamic {
+    letter-spacing: var(--brand-name-letter-spacing-desktop);
+  }
+}
+
+@media (min-width: 1440px) {
+  .font-brand-name-dynamic {
+    letter-spacing: var(--brand-name-letter-spacing-xl);
+  }
+}
+
+/* Ensure proper fallback font loading */
+@font-face {
+  font-family: "Circular Std Fallback";
+  src: local("system-ui"), local("-apple-system"), local("BlinkMacSystemFont");
+  font-display: swap;
+}
+
+/* Custom styles to match the exact Next.js starter design */
+.font-mono {
+  font-family: var(--font-geist-mono);
+}
+
+/* Ensure proper spacing and typography matches the original */
+h1,
+h2 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  main {
+    text-align: center;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .flex-col {
+    align-items: center;
+  }
+}
+
+/* Force proper light theme colors */
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Ensure proper light theme background and text colors */
+body {
+  background-color: rgb(255 255 255);
+  color: rgb(23 23 23);
+}
+
+.dark body {
+  background-color: rgb(10 10 10);
+  color: rgb(237 237 237);
+}
+
+/* Ensure text colors are properly applied */
+.text-gray-600 {
+  color: rgb(75 85 99);
+}
+
+.dark .text-gray-600 {
+  color: rgb(156 163 175);
+}
+
+.text-gray-400 {
+  color: rgb(156 163 175);
+}
+
+.dark .text-gray-400 {
+  color: rgb(156 163 175);
+}
+
+.text-black {
+  color: rgb(0 0 0);
+}
+
+.dark .text-black {
+  color: rgb(255 255 255);
+}
+
+.text-white {
+  color: rgb(255 255 255);
+}
+
+.dark .text-white {
+  color: rgb(255 255 255);
+}
+
+/* Light theme specific styles */
+.light .bg-gray-100,
+:root .bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.light .text-gray-600,
+:root .text-gray-600 {
+  color: #4b5563;
+}
+
+.light .border-gray-200,
+:root .border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.light .border-gray-300,
+:root .border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.light .hover\:border-gray-400:hover,
+:root .hover\:border-gray-400:hover {
+  border-color: #9ca3af;
+}
+
+.light .hover\:bg-gray-50:hover,
+:root .hover\:bg-gray-50:hover {
+  background-color: #f9fafb;
+}
+
+/* Dark theme specific adjustments */
+.dark .bg-gray-100 {
+  background-color: #1f2937;
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af;
+}
+
+.dark .border-gray-800 {
+  border-color: #1f2937;
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Loading animations */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0));
+  background-size: 200px 100%;
+}
+
+.dark .animate-shimmer {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.03) 20%,
+      rgba(255, 255, 255, 0.06) 60%,
+      rgba(255, 255, 255, 0));
+}
+
+/* Enhanced skeleton loading */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0));
+  animation: shimmer 2s infinite;
+  content: "";
+}
+
+.dark .skeleton::after {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.03) 20%,
+      rgba(255, 255, 255, 0.06) 60%,
+      rgba(255, 255, 255, 0));
+}
+
+/* Blog post styling */
+article {
+  transition: all 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-2px);
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced skill tag styling */
+.skill-tag {
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .skill-tag:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  #skills {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .theme-toggle {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Enhanced grid responsiveness */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Enhanced page transitions */
+.page-transition {
+  will-change: transform, opacity;
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button {
+  transition: all 0.2s ease;
+}
+
+/* Improved hover states */
+a:hover {
+  transform: translateY(-1px);
+}
+
+/* Better focus states for accessibility */
+a:focus {
+  outline: none;
+}
+
+/* Custom focus styles that don't create boxes */
+a:focus-visible {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* Ensure smooth transitions without boxes */
+.group:focus,
+.group:focus-within {
+  outline: none;
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-pulse,
+  .animate-shimmer,
+  .skeleton::after {
+    animation: none !important;
+  }
+}
+
+/* Perfect button styling for both themes - ensuring identical appearance */
+.btn-social {
+  background-color: transparent;
+  border: 1px solid rgb(209 213 219);
+  color: hsl(var(--foreground));
+}
+
+.btn-social:hover {
+  background-color: rgb(249 250 251);
+  border-color: rgb(156 163 175);
+}
+
+.dark .btn-social {
+  border-color: rgba(255, 255, 255, 0.145);
+}
+
+.dark .btn-social:hover {
+  background-color: rgb(26 26 26);
+  border-color: transparent;
+}
+
+/* Typography hierarchy refinements */
+.text-hierarchy-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.text-hierarchy-role {
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.text-hierarchy-body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+@media (min-width: 640px) {
+  .text-hierarchy-name {
+    font-size: clamp(3rem, 5vw, 3.5rem);
+  }
+
+  .text-hierarchy-role {
+    font-size: clamp(2.25rem, 4vw, 2.5rem);
+  }
+}
+
+/* Enhanced visual hierarchy with refined spacing */
+.visual-hierarchy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 640px) {
+  .visual-hierarchy-container {
+    gap: 4rem;
+  }
+}
+
+/* Perfect spacing for content sections */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 37.5rem;
+}
+
+/* Button group styling with refined spacing */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .button-group {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Enhanced button styling with pixel-perfect consistency */
+.btn-enhanced {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1.25rem;
+  min-width: 11rem;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  border: 1px solid rgb(209 213 219);
+  color: hsl(var(--foreground));
+}
+
+@media (min-width: 640px) {
+  .btn-enhanced {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    height: 3rem;
+  }
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-1px);
+  background-color: rgb(249 250 251);
+  border-color: rgb(156 163 175);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .btn-enhanced {
+  border-color: rgba(255, 255, 255, 0.145);
+}
+
+.dark .btn-enhanced:hover {
+  background-color: rgb(26 26 26);
+  border-color: transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Refined spacing system */
+.spacing-refined {
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 1rem;
+  /* 16px */
+  --spacing-md: 2rem;
+  /* 32px */
+  --spacing-lg: 3rem;
+  /* 48px */
+  --spacing-xl: 4rem;
+  /* 64px */
+}
+
+/* Component-specific spacing refinements */
+.main-content-spacing {
+  gap: 3rem;
+  /* 48px between major sections */
+}
+
+@media (min-width: 640px) {
+  .main-content-spacing {
+    gap: 3rem;
+    /* Maintain consistent spacing on larger screens */
+  }
+}
+
+.content-section-spacing {
+  gap: 2rem;
+  /* 32px between role and paragraph */
+}
+
+/* Ensure perfect visual alignment */
+.visual-alignment {
+  align-items: flex-start;
+  text-align: left;
+}
+
+@media (max-width: 639px) {
+  .visual-alignment {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Loading state improvements */
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure loading states are accessible */
+.loading-skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.loading-skeleton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+  transform: translateX(-100%);
+  animation: loading-shimmer 1.5s infinite;
+}
+
+.dark .loading-skeleton::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+}
+
+@keyframes loading-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced hover link icon effects */
+.hover-link-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hover-link-icon {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.group:hover .hover-link-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive link icon sizing */
+@media (max-width: 640px) {
+  .hover-link-container {
+    gap: 0.5rem;
+  }
+
+  .hover-link-icon {
+    transform: translateX(-2px);
+  }
+}
+
+/* Enhanced focus states for link icons */
+.group:focus-visible .hover-link-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Smooth color transitions for link icons */
+.hover-link-icon svg {
+  transition: color 0.3s ease;
+}
+
+/* Ensure proper alignment on different screen sizes */
+.link-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 640px) {
+  .link-with-icon {
+    gap: 0.5rem;
+  }
+}
+
+/* Prevent layout shift during hover */
+.link-icon-placeholder {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .link-icon-placeholder {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Enhanced micro-interactions */
+.hover-link-enhanced {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-link-enhanced:hover {
+  transform: translateY(-1px);
+}
+
+.hover-link-enhanced .link-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateX(-8px) scale(0.8);
+}
+
+.hover-link-enhanced:hover .link-icon {
+  opacity: 1;
+  transform: translateX(4px) scale(1);
+}
+
+/* Accessibility improvements for link icons */
+@media (prefers-reduced-motion: reduce) {
+
+  .hover-link-icon,
+  .link-icon {
+    transition: opacity 0.1s ease !important;
+    transform: none !important;
+  }
+
+  .group:hover .hover-link-icon,
+  .hover-link-enhanced:hover .link-icon {
+    transform: none !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hover-link-icon {
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+
+  .group:active .hover-link-icon {
+    opacity: 1;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hover-link-icon {
+    opacity: 0.8;
+  }
+
+  .group:hover .hover-link-icon {
+    opacity: 1;
+  }
+}
+
+/* Font loading optimization */
+.font-brand-name {
+  font-display: swap;
+}
+
+/* Ensure consistent font rendering across browsers */
+.font-brand-name {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Performance optimizations for font rendering */
+.font-brand-name {
+  will-change: auto;
+  contain: layout style;
+}
+
+/* Brand name spacing utility class */
+.brand-name-spacing {
+  letter-spacing: var(--brand-name-letter-spacing-mobile, 0.02em);
+  transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .brand-name-spacing {
+    letter-spacing: var(--brand-name-letter-spacing-tablet, 0.03em);
+  }
+}
+
+@media (min-width: 1025px) {
+  .brand-name-spacing {
+    letter-spacing: var(--brand-name-letter-spacing-desktop, 0.035em);
+  }
+}
+
+@media (min-width: 1440px) {
+  .brand-name-spacing {
+    letter-spacing: var(--brand-name-letter-spacing-xl, 0.04em);
+  }
+}
+
+/* Enhanced hover effects for letter-spacing */
+.group:hover .brand-name-spacing,
+.brand-name-spacing:hover {
+  letter-spacing: calc(var(--brand-name-letter-spacing-mobile, 0.02em) + 0.01em);
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  .group:hover .brand-name-spacing,
+  .brand-name-spacing:hover {
+    letter-spacing: calc(var(--brand-name-letter-spacing-tablet, 0.03em) + 0.01em);
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .group:hover .brand-name-spacing,
+  .brand-name-spacing:hover {
+    letter-spacing: calc(var(--brand-name-letter-spacing-desktop, 0.035em) + 0.01em);
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .group:hover .brand-name-spacing,
+  .brand-name-spacing:hover {
+    letter-spacing: calc(var(--brand-name-letter-spacing-xl, 0.04em) + 0.01em);
+  }
+}
+
+/* Focus states for accessibility */
+.brand-name-spacing:focus-visible {
+  letter-spacing: calc(var(--brand-name-letter-spacing-mobile, 0.02em) + 0.005em);
+  outline: none;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .brand-name-spacing {
+    transition: none;
+  }
+
+  .group:hover .brand-name-spacing,
+  .brand-name-spacing:hover {
+    letter-spacing: var(--brand-name-letter-spacing-mobile, 0.02em);
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .brand-name-spacing {
+    letter-spacing: calc(var(--brand-name-letter-spacing-mobile, 0.02em) - 0.005em);
+  }
+}
+
+/* Print styles - remove letter-spacing for better print readability */
+@media print {
+  .brand-name-spacing {
+    letter-spacing: normal;
+  }
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 1920px) {
+  .brand-name-spacing {
+    letter-spacing: 0.045em;
+  }
+
+  .group:hover .brand-name-spacing,
+  .brand-name-spacing:hover {
+    letter-spacing: 0.055em;
+  }
+}
+
+/* Fine-tune letter-spacing for different font weights */
+.font-brand-name.font-light {
+  letter-spacing: calc(var(--brand-name-letter-spacing-mobile, 0.02em) + 0.01em);
+}
+
+.font-brand-name.font-bold {
+  letter-spacing: var(--brand-name-letter-spacing-mobile, 0.02em);
+}
+
+.font-brand-name.font-black {
+  letter-spacing: calc(var(--brand-name-letter-spacing-mobile, 0.02em) - 0.005em);
+}
+
+/* Smooth animation for letter-spacing changes */
+.brand-name-spacing-animated {
+  animation: subtle-spacing-pulse 4s ease-in-out infinite;
+}
+
+@keyframes subtle-spacing-pulse {
+
+  0%,
+  100% {
+    letter-spacing: var(--brand-name-letter-spacing-mobile, 0.02em);
+  }
+
+  50% {
+    letter-spacing: calc(var(--brand-name-letter-spacing-mobile, 0.02em) + 0.005em);
+  }
+}
+
+/* Disable animation on reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .brand-name-spacing-animated {
+    animation: none;
+  }
+}
+
+/* New utility class for main page headings */
+.text-main-heading {
+  font-size: 2.25rem;
+  /* text-4xl equivalent */
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  /* Default tracking for headings */
+}
+
+@media (min-width: 640px) {
+  .text-main-heading {
+    font-size: 3rem;
+    /* sm:text-5xl equivalent */
+  }
+}
