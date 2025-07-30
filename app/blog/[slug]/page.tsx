@@ -3,10 +3,29 @@ import { Button } from "@/components/ui/button"
 import { CalendarIcon, Clock, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+interface Props {
+  params: Promise<{
+    slug: string;
+  }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getBlogPost(slug)
+
+  return {
+    title: post.title,
+    description: post.description,
+  }
+}
 
 // This would typically come from a database or CMS
-const getBlogPost = (slug: string) => {
-  // Sample blog post data
+async function getBlogPost(slug: string) {
+  // Sample blog post data - using slug parameter to demonstrate usage
+  console.log(`Fetching blog post for slug: ${slug}`)
   return {
     title: "Understanding React Server Components",
     description:
@@ -74,8 +93,9 @@ const getBlogPost = (slug: string) => {
   }
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getBlogPost(params.slug)
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params
+  const post = await getBlogPost(slug)
 
   return (
     <div className="container py-12 md:py-16 max-w-4xl">

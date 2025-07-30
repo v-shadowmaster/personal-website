@@ -87,7 +87,7 @@ export default function ResumeViewer() {
           {!isLoading && pdfSupported && (
             <div className="mt-4 text-center text-sm text-muted-foreground">
               <p>
-                If the PDF doesn't display properly, you can{" "}
+                If the PDF doesn&apos;t display properly, you can{" "}
                 <button onClick={() => setShowFallback(true)} className="text-primary hover:underline">
                   view the resume content
                 </button>{" "}

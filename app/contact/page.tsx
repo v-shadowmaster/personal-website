@@ -7,14 +7,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { ContactLoading } from "@/components/loading/contact-loading"
 import { useLoading } from "@/hooks/use-loading"
 
 export default function ContactPage() {
   const { isLoading } = useLoading({ delay: 160, minLoadingTime: 950 })
-  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,8 +23,7 @@ export default function ContactPage() {
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    toast({
-      title: "Message sent!",
+    toast("Message sent!", {
       description: "Thank you for your message. I'll get back to you soon.",
     })
 
@@ -51,7 +49,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -149,7 +147,7 @@ export default function ContactPage() {
                     </svg>
                   </a>
                   <a
-                    href="https://linkedin.com/in/vinaykumar"
+                    href="https://linkedin.com/in/vinay-kumar-l"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"

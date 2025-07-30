@@ -53,7 +53,7 @@ export default function ProjectsPage() {
       <div className="space-y-4 mb-12">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h1>
         <p className="text-muted-foreground max-w-[700px]">
-          A collection of projects I've built to showcase my skills and experience as a full-stack developer.
+          A collection of projects I&apos;ve built to showcase my skills and experience as a full-stack developer.
         </p>
       </div>
 

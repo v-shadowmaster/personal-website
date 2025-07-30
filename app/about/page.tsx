@@ -16,9 +16,9 @@ export default function AboutPage() {
     tools: ["Git", "GitHub", "VS Code", "Docker", "AWS", "Vercel"],
   }
 
-  // if (isLoading) {
-  //   return <AboutLoading />
-  // }
+  if (isLoading) {
+    return <AboutLoading />
+  }
 
   return (
     <div className="container py-12 md:py-16">
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/vinaykumar"
+                href="https://linkedin.com/in/vinay-kumar-l"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -114,13 +114,13 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">About Me</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Hello! I'm Vinay Kumar, a passionate full-stack software engineer with a strong foundation in modern web
+                Hello! I&apos;m Vinay Kumar, a passionate full-stack software engineer with a strong foundation in modern web
                 technologies. I recently completed my degree in Computer Science and am excited to apply my skills in a
                 professional setting.
               </p>
               <p>
                 My journey in software development began during my university years, where I discovered my passion for
-                creating web applications. Since then, I've been continuously learning and building projects to enhance
+                creating web applications. Since then, I&apos;ve been continuously learning and building projects to enhance
                 my skills.
               </p>
               <p>

@@ -3,17 +3,9 @@
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { PageTransition } from "@/components/page-transition"
-import { PageLoading } from "@/components/loading/page-loading"
-import { useLoading } from "@/hooks/use-loading"
 import { ArrowUpRight } from "lucide-react"
 
 export default function Home() {
-  // const { isLoading, showContent } = useLoading({ delay: 200, minLoadingTime: 1200 })
-
-  // if (isLoading) {
-  //   return <PageLoading />
-  // }
-
   return (
     <PageTransition>
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] relative">
@@ -77,7 +69,7 @@ export default function Home() {
             </a>
             <a
               className="rounded-full border border-solid border-gray-300 dark:border-white/[.145] transition-colors flex items-center justify-center bg-transparent hover:bg-gray-50 dark:hover:bg-[#1a1a1a] hover:border-gray-400 dark:hover:border-transparent text-base sm:text-lg h-10 sm:h-12 px-4 sm:px-5 min-w-44"
-              href="https://linkedin.com/in/vinaykumar"
+              href="https://linkedin.com/in/vinay-kumar-l"
               target="_blank"
               rel="noopener noreferrer"
             >
