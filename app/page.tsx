@@ -8,11 +8,11 @@ import { useLoading } from "@/hooks/use-loading"
 import { ArrowUpRight } from "lucide-react"
 
 export default function Home() {
-  const { isLoading, showContent } = useLoading({ delay: 200, minLoadingTime: 1200 })
+  // const { isLoading, showContent } = useLoading({ delay: 200, minLoadingTime: 1200 })
 
-  if (isLoading) {
-    return <PageLoading />
-  }
+  // if (isLoading) {
+  //   return <PageLoading />
+  // }
 
   return (
     <PageTransition>

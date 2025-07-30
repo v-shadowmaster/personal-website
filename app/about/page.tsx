@@ -16,9 +16,9 @@ export default function AboutPage() {
     tools: ["Git", "GitHub", "VS Code", "Docker", "AWS", "Vercel"],
   }
 
-  if (isLoading) {
-    return <AboutLoading />
-  }
+  // if (isLoading) {
+  //   return <AboutLoading />
+  // }
 
   return (
     <div className="container py-12 md:py-16">
