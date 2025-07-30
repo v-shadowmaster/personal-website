@@ -35,12 +35,12 @@ export default function AboutPage() {
                 priority
               />
             </div>
-            <h1 className="font-brand-name text-2xl font-bold text-center mb-2 brand-name-spacing">Vinay Kumar L</h1>
+            <h1 className="text-main-heading text-2xl font-bold text-center mb-2 brand-name-spacing">Vinay Kumar L</h1>
             <p className="text-center text-muted-foreground mb-6">Full-Stack Software Engineer</p>
 
             <div className="flex justify-center space-x-4 mb-6">
               <a
-                href="https://github.com/vinaykumar"
+                href="https://github.com/v-shadowmaster"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"

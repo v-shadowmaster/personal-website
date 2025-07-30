@@ -26,7 +26,7 @@ export default function Home() {
             className="group block hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80 relative"
           >
             <div className="flex items-center gap-3">
-              <h1 className="font-brand-name font-bold leading-tight tracking-tight brand-name-spacing">
+              <h1 className="text-main-heading font-bold leading-tight tracking-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
                 VINAY KUMAR L
               </h1>
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="text-left max-w-[600px] space-y-8">
             <Link href="/skills" className="group block">
               <div className="flex items-center gap-3">
-                <h2 className="text-main-heading font-bold leading-tight hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80">
+                <h2 className="text-main-heading font-bold leading-tight hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80 ">
                   Full Stack Engineer
                 </h2>
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
@@ -47,8 +47,8 @@ export default function Home() {
               </div>
             </Link>
 
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Building clear, architected, scalable software systems with first‑principles problem‑solving, focusing
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed ">
+              Building clean, architected, scalable software systems with first‑principles problem‑solving, focusing
               only on what matters and harnessing modern tools and human‑AI collaboration —{" "}
               <Link href="/blog" className="font-semibold text-black dark:text-white hover:underline">
                 documented insights & learnings
@@ -58,8 +58,8 @@ export default function Home() {
 
           <div className="flex gap-4 items-center flex-col sm:flex-row sm:items-start">
             <a
-              className="rounded-full border border-solid border-gray-300 dark:border-white/[.145] transition-colors flex items-center justify-center bg-transparent hover:bg-gray-50 dark:hover:bg-[#1a1a1a] hover:border-gray-400 dark:hover:border-transparent text-base sm:text-lg h-10 sm:h-12 px-4 sm:px-5 min-w-44"
-              href="https://github.com/vinaykumar"
+              className="rounded-full border border-solid border-gray-300 dark:border-white/[.145] transition-colors flex items-center justify-center bg-transparent hover:bg-gray-50 dark:hover:bg-[#1a1a1a] hover:border-gray-400 dark:hover:border-transparent text-base sm:text-lg h-10 sm:h-12 px-4 sm:px-5 min-w-44  "
+              href="https://github.com/v-shadowmaster"
               target="_blank"
               rel="noopener noreferrer"
             >

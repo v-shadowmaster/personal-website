@@ -42,7 +42,7 @@ export default function Navigation() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-brand-name font-bold text-xl brand-name-spacing">Vinay Kumar</span>
+            <span className="text-main-heading font-bold text-xl brand-name-spacing">Vinay Kumar</span>
           </Link>
 
           {!isMobile && (

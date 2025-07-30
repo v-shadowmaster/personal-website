@@ -56,7 +56,7 @@ export default function BlogPage() {
               className="group font-bold leading-tight tracking-tight hover:opacity-80 transition-all duration-300 ease-in-out"
             >
               <div className="flex items-center gap-3">
-                <span className="font-brand-name brand-name-spacing">VINAY KUMAR</span>
+                <span className="text-main-heading brand-name-spacing">VINAY KUMAR</span>
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
                   <ArrowUpRight className="h-6 w-6 sm:h-7 sm:w-7 text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200" />
                 </div>
@@ -117,7 +117,7 @@ export default function BlogPage() {
           <div className="flex gap-4 items-center flex-col sm:flex-row sm:items-start">
             <a
               className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 min-w-44"
-              href="https://github.com/vinaykumar"
+              href="https://github.com/v-shadowmaster"
               target="_blank"
               rel="noopener noreferrer"
             >

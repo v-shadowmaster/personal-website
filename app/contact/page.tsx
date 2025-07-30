@@ -127,7 +127,7 @@ export default function ContactPage() {
                 <h3 className="font-medium mb-4">Connect with me</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="https://github.com/vinaykumar"
+                    href="https://github.com/v-shadowmaster"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"

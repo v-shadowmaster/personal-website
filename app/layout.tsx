@@ -1,18 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local"
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 
 // Circular Std font for brand name
 const circularStd = localFont({
@@ -50,7 +41,7 @@ const circularStd = localFont({
 
 export const metadata: Metadata = {
   title: "Vinay Kumar L - Full Stack Engineer",
-  description: "Building clear, architected, scalable software systems with first-principles problem-solving.",
+  description: "Building clean, architected, scalable software systems with first-principles problem-solving.",
   generator: 'v0.dev'
 }
 
@@ -62,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${circularStd.variable} antialiased bg-background text-foreground`}
       >
         {children}
       </body>
