@@ -17,8 +17,9 @@ export default function Home() {
             rel="noopener noreferrer"
             className="group block hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80 relative"
           >
-            <div className="flex items-center gap-3">
-              <h1 className="text-main-heading font-bold leading-tight tracking-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
+
+            <div className="flex items-center gap-3 group">
+              <h1 className="text-main-heading font-bold leading-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
                 VINAY KUMAR L
               </h1>
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
