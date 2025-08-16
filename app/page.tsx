@@ -32,7 +32,7 @@ export default function Home() {
             <Link href="/skills" className="group block">
               <div className="flex items-center gap-3">
                 <h2 className="text-main-heading font-bold leading-tight hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80 ">
-                  Full Stack Engineer
+                  Software Developer Engineer - 1
                 </h2>
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
                   <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200" />
