@@ -1,9 +1,9 @@
-"use client"
+'use client';
 
-import Link from "next/link"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { PageTransition } from "@/components/page-transition"
-import { ArrowUpRight } from "lucide-react"
+import Link from 'next/link';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { PageTransition } from '@/components/page-transition';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -17,7 +17,6 @@ export default function Home() {
             rel="noopener noreferrer"
             className="group block hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80 relative"
           >
-
             <div className="flex items-center gap-3 group">
               <h1 className="text-main-heading font-bold leading-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
                 VINAY KUMAR L
@@ -32,7 +31,7 @@ export default function Home() {
             <Link href="/skills" className="group block">
               <div className="flex items-center gap-3">
                 <h2 className="text-main-heading font-bold leading-tight hover:opacity-80 transition-all duration-300 ease-in-out focus:outline-none focus:opacity-80 ">
-                  Software Developer Engineer - 1
+                  Software Engineer - 1
                 </h2>
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
                   <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200" />
@@ -41,9 +40,13 @@ export default function Home() {
             </Link>
 
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed ">
-              Building clean, architected, scalable software systems with first‑principles problem‑solving, focusing
-              only on what matters and harnessing modern tools and human‑AI collaboration —{" "}
-              <Link href="/blog" className="font-semibold text-black dark:text-white hover:underline">
+              Building clean, architected, scalable software systems with
+              first‑principles problem‑solving, focusing only on what matters
+              and harnessing modern tools and human‑AI collaboration —{' '}
+              <Link
+                href="/blog"
+                className="font-semibold text-black dark:text-white hover:underline"
+              >
                 documented insights & learnings
               </Link>
             </p>
@@ -90,5 +93,5 @@ export default function Home() {
         </main>
       </div>
     </PageTransition>
-  )
+  );
 }

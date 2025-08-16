@@ -1,17 +1,17 @@
-"use client"
+'use client';
 
-import Link from "next/link"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { PageTransition } from "@/components/page-transition"
-import { SkillsLoading } from "@/components/loading/skills-loading"
-import { useLoading } from "@/hooks/use-loading"
-import { ArrowUpRight } from "lucide-react"
+import Link from 'next/link';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { PageTransition } from '@/components/page-transition';
+import { SkillsLoading } from '@/components/loading/skills-loading';
+import { useLoading } from '@/hooks/use-loading';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function SkillsPage() {
-  const { isLoading } = useLoading({ delay: 220, minLoadingTime: 1150 })
+  const { isLoading } = useLoading({ delay: 220, minLoadingTime: 1150 });
 
   if (isLoading) {
-    return <SkillsLoading />
+    return <SkillsLoading />;
   }
 
   return (
@@ -25,17 +25,22 @@ export default function SkillsPage() {
               className="group text-4xl sm:text-5xl font-bold leading-tight tracking-tight hover:opacity-80 transition-all duration-300 ease-in-out"
             >
               <div className="flex items-center gap-3">
-                <span className="text-main-heading brand-name-spacing">VINAY KUMAR</span>
+                <span className="text-main-heading brand-name-spacing">
+                  VINAY KUMAR
+                </span>
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-x-0 group-hover:translate-x-1">
                   <ArrowUpRight className="h-6 w-6 sm:h-7 sm:w-7 text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200" />
                 </div>
               </div>
             </Link>
             <div className="text-left space-y-8">
-              <h1 className="text-4xl sm:text-5xl font-bold leading-tight">Full Stack Engineer</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
+                Software Engineer - 1
+              </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-[600px]">
-                A comprehensive toolkit built through hands-on experience and continuous learning, focused on creating
-                robust, scalable solutions.
+                A comprehensive toolkit built through hands-on experience and
+                continuous learning, focused on creating robust, scalable
+                solutions.
               </p>
             </div>
           </div>
@@ -122,30 +127,41 @@ export default function SkillsPage() {
               <h2 className="text-2xl font-bold">Core Principles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">First-Principles Thinking</h3>
+                  <h3 className="text-lg font-semibold">
+                    First-Principles Thinking
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Breaking down complex problems to fundamental components, enabling innovative solutions and avoiding
-                    unnecessary complexity.
+                    Breaking down complex problems to fundamental components,
+                    enabling innovative solutions and avoiding unnecessary
+                    complexity.
                   </p>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Human-AI Collaboration</h3>
+                  <h3 className="text-lg font-semibold">
+                    Human-AI Collaboration
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Leveraging AI tools to augment creativity and productivity while maintaining critical thinking and
-                    architectural decision-making.
+                    Leveraging AI tools to augment creativity and productivity
+                    while maintaining critical thinking and architectural
+                    decision-making.
                   </p>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Scalable Architecture</h3>
+                  <h3 className="text-lg font-semibold">
+                    Scalable Architecture
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Designing systems that grow gracefully with user needs, team size, and business requirements.
+                    Designing systems that grow gracefully with user needs, team
+                    size, and business requirements.
                   </p>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Focus on What Matters</h3>
+                  <h3 className="text-lg font-semibold">
+                    Focus on What Matters
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Prioritizing features and solutions that deliver real value, avoiding over-engineering and feature
-                    bloat.
+                    Prioritizing features and solutions that deliver real value,
+                    avoiding over-engineering and feature bloat.
                   </p>
                 </div>
               </div>
@@ -193,5 +209,5 @@ export default function SkillsPage() {
         </main>
       </div>
     </PageTransition>
-  )
+  );
 }
