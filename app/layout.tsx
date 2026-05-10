@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 // Circular Std font for brand name
@@ -62,6 +63,7 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} ${circularStd.variable} antialiased bg-background text-foreground`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
