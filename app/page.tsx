@@ -2,10 +2,27 @@ import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { SocialLinks } from '@/components/social-links';
 import { ArrowUpRight } from 'lucide-react';
+import { siteUrl } from '@/lib/site';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Vinay Kumar L',
+  jobTitle: 'Software Engineer',
+  url: siteUrl,
+  sameAs: [
+    'https://github.com/v-shadowmaster',
+    'https://linkedin.com/in/vinay-kumar-l',
+  ],
+};
 
 export default function Home() {
   return (
     <div className="relative flex min-h-screen items-center px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeToggle />
         {/* Centered column, nudged a hair left of center on larger screens.
             Tune the lean with the lg:-translate-x value (larger = more left). */}

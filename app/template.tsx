@@ -10,6 +10,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <motion.div
+      id="main-content"
+      tabIndex={-1}
+      className="outline-none"
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
