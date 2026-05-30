@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { PageTransition } from '@/components/page-transition';
 import { SocialLinks } from '@/components/social-links';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -51,8 +50,7 @@ const principles = [
 
 export default function SkillsPage() {
   return (
-    <PageTransition>
-      <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
+    <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
         <ThemeToggle />
         <main className="mx-auto flex w-full max-w-4xl flex-col items-start gap-12 lg:-translate-x-8">
           <div className="flex flex-col gap-6">
@@ -88,7 +86,7 @@ export default function SkillsPage() {
                     {group.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium dark:bg-gray-800 skill-tag"
+                        className="rounded-full bg-muted px-3 py-1 text-sm font-medium skill-tag"
                       >
                         {skill}
                       </span>
@@ -116,6 +114,5 @@ export default function SkillsPage() {
           <SocialLinks />
         </main>
       </div>
-    </PageTransition>
   );
 }

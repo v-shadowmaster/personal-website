@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { PageTransition } from '@/components/page-transition';
 import { SocialLinks } from '@/components/social-links';
 import { ArrowUpRight } from 'lucide-react';
 import { blogPosts } from '@/lib/posts';
@@ -18,8 +17,7 @@ export const revalidate = 3600;
 
 export default function BlogPage() {
   return (
-    <PageTransition>
-      <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
+    <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
         <ThemeToggle />
         <main className="mx-auto flex w-full max-w-4xl flex-col items-start gap-12 lg:-translate-x-8">
           <div className="flex flex-col gap-6">
@@ -49,7 +47,7 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <article
                 key={post.id}
-                className="border-b border-gray-200 pb-12 last:border-b-0 dark:border-gray-800"
+                className="border-b border-border pb-12 last:border-b-0"
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
@@ -92,6 +90,5 @@ export default function BlogPage() {
           <SocialLinks />
         </main>
       </div>
-    </PageTransition>
   );
 }

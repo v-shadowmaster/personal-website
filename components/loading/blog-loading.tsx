@@ -24,7 +24,7 @@ export function BlogLoading() {
 
         <div className="w-full space-y-12">
           {Array.from({ length: 3 }).map((_, i) => (
-            <article key={i} className="border-b border-gray-200 dark:border-gray-800 pb-12 last:border-b-0">
+            <article key={i} className="border-b border-border pb-12 last:border-b-0">
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Skeleton className="h-4 w-24" />

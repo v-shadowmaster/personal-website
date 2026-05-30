@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { PageTransition } from '@/components/page-transition';
 import { SocialLinks } from '@/components/social-links';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <PageTransition>
-      <div className="relative flex min-h-screen items-center px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
+    <div className="relative flex min-h-screen items-center px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
         <ThemeToggle />
         {/* Centered column, nudged a hair left of center on larger screens.
             Tune the lean with the lg:-translate-x value (larger = more left). */}
@@ -56,6 +54,5 @@ export default function Home() {
           </div>
         </main>
       </div>
-    </PageTransition>
   );
 }
