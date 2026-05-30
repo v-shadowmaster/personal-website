@@ -21,7 +21,10 @@ Four surfaces — **Home**, **Skills**, **Résumé**, and **Blog** — share one
 - **Design-system first** — one type scale, one spacing rhythm, one alignment, one set of button primitives.
 - **First-class theming** — light/dark via `next-themes` with an OKLCH token system and a cross-fading toggle.
 - **Considered motion** — route transitions and skeleton loading states (Framer Motion).
-- **Accessible by default** — semantic landmarks, focus-visible rings, `aria-label`s, reduced-motion support.
+- **Accessible by default** — skip-to-content link, semantic landmarks, focus-visible rings, `aria-label`s, reduced-motion support.
+- **Rendering** — Server Components, statically generated, with hourly ISR on the blog.
+- **SEO-ready** — per-page metadata, generated Open Graph cards, `sitemap.xml`, `robots.txt`, and JSON-LD.
+- **Tested & CI-gated** — Vitest suite plus a GitHub Actions pipeline (typecheck · lint · test · build).
 - **Modern stack** — Next.js App Router on React 19, bundled with Turbopack.
 
 ---
@@ -158,6 +161,7 @@ Open [http://localhost:3000](http://localhost:3000) — edits to `app/page.tsx` 
 | `npm run build` | Production build                        |
 | `npm run start` | Serve the production build              |
 | `npm run lint`  | Lint with ESLint (`eslint-config-next`) |
+| `npm test`      | Run the Vitest test suite               |
 
 ---
 
