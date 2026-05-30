@@ -4,6 +4,15 @@ import { CalendarIcon, Clock, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import type { Metadata } from "next"
+import { blogPosts } from "@/lib/posts"
+
+// Pre-render every known post at build time (SSG); unknown slugs render
+// on-demand and are then cached. Revalidate hourly (ISR).
+export const revalidate = 3600
+
+export function generateStaticParams() {
+  return blogPosts.map((post) => ({ slug: post.slug }))
+}
 
 interface Props {
   params: Promise<{
@@ -98,8 +107,9 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getBlogPost(slug)
 
   return (
-    <div className="container py-12 md:py-16 max-w-4xl">
-      <Button variant="ghost" className="mb-8" asChild>
+    <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
+      <div className="mx-auto w-full max-w-4xl lg:-translate-x-8">
+        <Button variant="ghost" className="mb-8" asChild>
         <Link href="/blog">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to all articles
@@ -107,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
       </Button>
 
       <div className="space-y-4 mb-8">
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{post.title}</h1>
+        <h1 className="text-main-heading font-bold leading-tight">{post.title}</h1>
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center">
             <CalendarIcon className="mr-1 h-4 w-4" />
@@ -138,7 +148,8 @@ export default async function BlogPostPage({ params }: Props) {
         />
       </div>
 
-      <div className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+      </div>
     </div>
   )
 }

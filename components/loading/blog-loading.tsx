@@ -4,20 +4,20 @@ import { Skeleton } from "./skeleton"
 
 export function BlogLoading() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] relative">
+    <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
       {/* Theme toggle skeleton */}
       <div className="fixed bottom-8 right-8 z-50">
         <Skeleton className="w-12 h-12 rounded-full" />
       </div>
 
-      <main className="flex flex-col gap-12 row-start-2 items-start w-full max-w-4xl">
-        <div className="flex flex-col gap-8">
-          <Skeleton className="h-12 w-80 sm:h-16 sm:w-96" />
-          <div className="text-left space-y-8">
-            <Skeleton className="h-12 w-full sm:h-16" />
+      <main className="mx-auto flex w-full max-w-4xl flex-col items-start gap-12 lg:-translate-x-8">
+        <div className="flex flex-col gap-6">
+          <Skeleton className="h-12 w-80 sm:h-14 sm:w-96" />
+          <div className="space-y-6">
+            <Skeleton className="h-12 w-full sm:h-14 max-w-2xl" />
             <div className="space-y-3">
-              <Skeleton className="h-6 w-full max-w-[600px]" />
-              <Skeleton className="h-6 w-5/6 max-w-[500px]" />
+              <Skeleton className="h-6 w-full max-w-2xl" />
+              <Skeleton className="h-6 w-5/6 max-w-2xl" />
             </div>
           </div>
         </div>
@@ -42,9 +42,9 @@ export function BlogLoading() {
           ))}
         </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row sm:items-start">
-          <Skeleton className="h-10 w-44 sm:h-12 rounded-full" />
-          <Skeleton className="h-10 w-44 sm:h-12 rounded-full" />
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:gap-4">
+          <Skeleton className="h-11 w-44 rounded-full" />
+          <Skeleton className="h-11 w-44 rounded-full" />
         </div>
       </main>
     </div>
