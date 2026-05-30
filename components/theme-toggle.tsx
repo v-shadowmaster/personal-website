@@ -5,44 +5,29 @@ import { useEffect, useState } from "react"
 import { Moon, Sun } from "lucide-react"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  useEffect(() => setMounted(true), [])
 
+  // Reserve the footprint before mount so the button doesn't pop in.
   if (!mounted) {
-    return null
+    return <div className="fixed bottom-6 right-6 z-50 h-11 w-11" aria-hidden />
   }
 
-  const isDark = theme === "dark"
-  const toggleTheme = () => setTheme(isDark ? "light" : "dark")
+  const isDark = resolvedTheme === "dark"
 
   return (
     <button
-      onClick={toggleTheme}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`fixed bottom-8 right-8 z-50 flex items-center justify-center bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-white/95 dark:hover:bg-gray-900/95 ${
-        isHovered ? "rounded-full px-6 py-3 min-w-[180px] h-12" : "rounded-full w-12 h-12"
-      }`}
+      type="button"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      title={`Switch to ${isDark ? "light" : "dark"} mode`}
+      className="group fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background/70 text-foreground shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-muted active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <div className="flex items-center gap-3">
-        {isDark ? (
-          <Moon className="h-4 w-4 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-        ) : (
-          <Sun className="h-4 w-4 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-        )}
-        <span
-          className={`text-sm font-medium whitespace-nowrap text-gray-700 dark:text-gray-300 transition-all duration-300 ${
-            isHovered ? "opacity-100 w-auto" : "opacity-0 w-0 overflow-hidden"
-          }`}
-        >
-          Change to {isDark ? "Light" : "Dark"} Mode
-        </span>
-      </div>
+      {/* Sun (light) and Moon (dark) cross-fade with a quarter-turn */}
+      <Sun className="h-[18px] w-[18px] rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-[18px] w-[18px] rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
     </button>
   )
 }
