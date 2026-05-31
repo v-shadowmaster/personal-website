@@ -8,7 +8,7 @@ import { blogPosts } from '@/lib/posts';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Thoughts on software engineering, system architecture, and human-AI collaboration.',
+    'Notes on software engineering, system architecture, and building with AI — documented so the learning compounds.',
 };
 
 // Statically rendered, revalidated at most hourly (ISR) so new writing can
@@ -27,7 +27,7 @@ export default function BlogPage() {
             >
               <div className="flex items-center gap-3">
                 <span className="text-main-heading font-bold leading-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
-                  VINAY KUMAR
+                  VINAY KUMAR L
                 </span>
                 <ArrowUpRight className="h-5 w-5 -translate-x-1 text-gray-600 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-gray-400 sm:h-6 sm:w-6" />
               </div>
@@ -37,8 +37,9 @@ export default function BlogPage() {
                 Documented Insights & Learnings
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                Thoughts on software engineering, system architecture, and the
-                intersection of human creativity with AI-powered development.
+                What I&rsquo;m learning about software engineering, system
+                architecture, and building with AI — written down so it
+                compounds.
               </p>
             </div>
           </div>

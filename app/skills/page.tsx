@@ -34,7 +34,7 @@ const principles = [
   {
     title: 'Human-AI Collaboration',
     description:
-      'Leveraging AI tools to augment creativity and productivity while maintaining critical thinking and architectural decision-making.',
+      'Using AI to move faster on the mechanical work while keeping every architectural decision — and the judgment behind it — firmly human.',
   },
   {
     title: 'Scalable Architecture',
@@ -60,7 +60,7 @@ export default function SkillsPage() {
             >
               <div className="flex items-center gap-3">
                 <span className="text-main-heading font-bold leading-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
-                  VINAY KUMAR
+                  VINAY KUMAR L
                 </span>
                 <ArrowUpRight className="h-5 w-5 -translate-x-1 text-gray-600 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-gray-400 sm:h-6 sm:w-6" />
               </div>
@@ -70,30 +70,33 @@ export default function SkillsPage() {
                 Software Engineer - 1
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                A comprehensive toolkit built through hands-on experience and
-                continuous learning, focused on creating robust, scalable
-                solutions.
+                The tools I reach for, and the principles I hold them to.
+                Chosen because they ship reliable, scalable software — not
+                because they trend.
               </p>
             </div>
           </div>
 
           <div className="w-full space-y-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {skillGroups.map((group) => (
-                <div key={group.title} className="space-y-6">
-                  <h2 className="text-xl font-semibold">{group.title}</h2>
-                  <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-full bg-muted px-3 py-1 text-sm font-medium skill-tag"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+            <div className="space-y-8">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Toolkit</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {skillGroups.map((group) => (
+                  <div key={group.title} className="space-y-6">
+                    <h3 className="text-xl font-semibold">{group.title}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {group.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full bg-muted px-3 py-1 text-sm font-medium skill-tag"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div className="space-y-8">

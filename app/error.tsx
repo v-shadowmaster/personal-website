@@ -20,14 +20,14 @@ export default function Error({
       <ThemeToggle />
       <main className="mx-auto w-full max-w-2xl lg:-translate-x-8">
         <div className="flex flex-col items-start gap-6">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400">
             Error
           </p>
           <h1 className="text-main-heading font-bold leading-tight">
             Something went wrong
           </h1>
           <p className="max-w-md text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-            An unexpected error occurred. You can try again, or head back home.
+            Something broke on our end, not yours. Try again, or head back home.
           </p>
           <button
             type="button"

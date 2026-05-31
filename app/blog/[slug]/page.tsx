@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, CalendarIcon, Clock } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { SocialLinks } from '@/components/social-links';
 import { blogPosts, getPostBySlug } from '@/lib/posts';
 import { siteUrl } from '@/lib/site';
 
@@ -68,18 +70,19 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <ThemeToggle />
       <div className="mx-auto w-full max-w-4xl lg:-translate-x-8">
         <article className="max-w-2xl">
           <Link
             href="/blog"
-            className="group mb-10 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="group mb-10 inline-flex items-center gap-2 text-sm font-medium text-gray-600 transition-colors hover:text-foreground dark:text-gray-400"
           >
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
             Back to all articles
           </Link>
 
           <header className="space-y-5">
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
               <span className="inline-flex items-center gap-1.5">
                 <CalendarIcon className="h-4 w-4" />
                 {formatDate(post.date)}
@@ -104,6 +107,10 @@ export default async function BlogPostPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
+
+        <div className="mt-12 max-w-2xl">
+          <SocialLinks />
+        </div>
       </div>
     </div>
   );
