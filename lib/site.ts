@@ -14,6 +14,6 @@ export const siteConfig = {
   name: 'Vinay Kumar L',
   title: 'Vinay Kumar L — Software Engineer - 1',
   description:
-    'Building clean, architected, scalable software systems with first-principles problem-solving.',
+    'Software Engineer building scalable systems from first principles, sharpened by modern tools and human-AI collaboration.',
   url: siteUrl,
 } as const;

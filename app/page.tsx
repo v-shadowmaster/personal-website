@@ -54,9 +54,9 @@ export default function Home() {
               </Link>
 
               <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                Building clean, architected, scalable software systems with
-                first‑principles problem‑solving, focusing only on what matters
-                and harnessing modern tools and human‑AI collaboration —{' '}
+                Building scalable systems from first principles — focused on
+                what matters, sharpened by modern tools and human‑AI
+                collaboration. Read the work:{' '}
                 <Link
                   href="/blog"
                   className="font-semibold text-black underline-offset-4 hover:underline dark:text-white"
