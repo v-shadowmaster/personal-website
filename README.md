@@ -2,7 +2,7 @@
 
 **Software Engineer - 1**
 
-Building clean, architected, scalable software systems with first-principles problem-solving — focusing only on what matters, and harnessing modern tools and human-AI collaboration.
+Building scalable systems from first principles — focused on what matters, and sharpened by modern tools and human-AI collaboration.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
@@ -18,7 +18,7 @@ A minimal, bold, design-engineered personal site. Type, rhythm, and motion are t
 
 Four surfaces — **Home**, **Skills**, **Résumé**, and **Blog** — share one tightly-defined visual language, so consistency is structural rather than manual.
 
-- **Design-system first** — one type scale, one spacing rhythm, one alignment, one set of button primitives.
+- **Design-system first** — one type scale, one spacing rhythm, one alignment, one page shell, one set of button primitives.
 - **First-class theming** — light/dark via `next-themes` with an OKLCH token system and a cross-fading toggle.
 - **Considered motion** — route transitions and skeleton loading states (Framer Motion).
 - **Accessible by default** — skip-to-content link, semantic landmarks, focus-visible rings, `aria-label`s, reduced-motion support.
@@ -62,6 +62,14 @@ Content sits in a column nudged **a hair left of center** on large screens (`lg:
 | -------------------------------- | ----------- | --------------- |
 | Home (hero)                      | `max-w-2xl` | —               |
 | Skills · Résumé · Blog · Article | `max-w-4xl` | `max-w-2xl`     |
+
+### Page shell
+
+Every surface is assembled from the same shell, so navigation and chrome never drift:
+
+- **Wordmark** — `VINAY KUMAR L`, linking home on every inner page.
+- **Theme toggle** — a fixed Sun ⇄ Moon control, present on all routes.
+- **Social footer** — the same outline-pill GitHub / LinkedIn links close out each page.
 
 ### Theming & color
 
