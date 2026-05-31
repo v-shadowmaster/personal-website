@@ -1,5 +1,3 @@
-<div align="center">
-
 # VINAY KUMAR L
 
 **Software Engineer - 1**
@@ -9,8 +7,6 @@ Building scalable systems from first principles — focused on what matters,<br/
 ![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=flat-square&labelColor=0D1117&logo=nextdotjs&logoColor=white) ![React](https://img.shields.io/badge/React-19-149ECA?style=flat-square&labelColor=0D1117&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&labelColor=0D1117&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38BDF8?style=flat-square&labelColor=0D1117&logo=tailwindcss&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Motion-12-0055FF?style=flat-square&labelColor=0D1117&logo=framer&logoColor=white) ![CI](https://img.shields.io/github/actions/workflow/status/v-shadowmaster/personal-website/ci.yml?style=flat-square&labelColor=0D1117&label=CI)
 
 [Overview](#overview)&nbsp;&nbsp;·&nbsp;&nbsp;[Design System](#design-system)&nbsp;&nbsp;·&nbsp;&nbsp;[Tech Stack](#tech-stack)&nbsp;&nbsp;·&nbsp;&nbsp;[Structure](#project-structure)&nbsp;&nbsp;·&nbsp;&nbsp;[Getting Started](#getting-started)&nbsp;&nbsp;·&nbsp;&nbsp;[Routes](#routes)&nbsp;&nbsp;·&nbsp;&nbsp;[Deployment](#deployment)
-
-</div>
 
 ---
 
@@ -50,13 +46,13 @@ The source of truth lives in `app/globals.css` (tokens) and the shared component
 
 Hierarchy is carried by **weight and a deliberate 2× jump** — not by a long ladder of sizes. Minimal, with bold as the lead.
 
-| Level          | Token / classes        |   Size (mobile → desktop) |   Weight | Used for                              |
-| :------------- | :--------------------- | ------------------------: | :------: | :------------------------------------ |
-| **Display**    | `text-main-heading`    |                 36 → 48px |     Bold | Name, every page title, article title |
-| **Heading**    | `text-2xl sm:text-3xl` |                 24 → 30px |     Bold | Sections, blog post titles            |
-| **Subheading** | `text-xl`              |                      20px | Semibold | Card / group titles                   |
-| **Body**       | `text-lg`              |                      18px |  Regular | Paragraphs, excerpts, descriptions    |
-| **Meta**       | `text-sm`              |                      14px |  Regular | Dates, read time, captions            |
+| Level          | Token / classes        | Size (mobile → desktop) |  Weight  | Used for                              |
+| :------------- | :--------------------- | ----------------------: | :------: | :------------------------------------ |
+| **Display**    | `text-main-heading`    |               36 → 48px |   Bold   | Name, every page title, article title |
+| **Heading**    | `text-2xl sm:text-3xl` |               24 → 30px |   Bold   | Sections, blog post titles            |
+| **Subheading** | `text-xl`              |                    20px | Semibold | Card / group titles                   |
+| **Body**       | `text-lg`              |                    18px | Regular  | Paragraphs, excerpts, descriptions    |
+| **Meta**       | `text-sm`              |                    14px | Regular  | Dates, read time, captions            |
 
 ### Spacing rhythm
 
@@ -71,7 +67,7 @@ A two-step vertical rhythm keeps every page on the same grid.
 
 Content sits in a column nudged **a hair left of center** on large screens (`lg:-translate-x-8`, ~32px) — present, not aggressive. Text is left-aligned throughout.
 
-| Surface                          | Column      | Reading measure |
+| Surface                          |   Column    | Reading measure |
 | :------------------------------- | :---------: | :-------------: |
 | Home (hero)                      | `max-w-2xl` |        —        |
 | Skills · Résumé · Blog · Article | `max-w-4xl` |   `max-w-2xl`   |
@@ -169,8 +165,7 @@ personal-website/
 
 ## Getting Started
 
-> [!NOTE]
-> **Prerequisites** — Node.js **18.18+** (20+ recommended) and npm.
+> [!NOTE] > **Prerequisites** — Node.js **18.18+** (20+ recommended) and npm.
 
 ```bash
 # 1 · Install dependencies
